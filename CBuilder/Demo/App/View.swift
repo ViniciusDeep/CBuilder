@@ -21,7 +21,6 @@ class View: UIView {
         super.init(frame: frame)
         addSubview(label)
         label.cBuild(make: .fillSuperview)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

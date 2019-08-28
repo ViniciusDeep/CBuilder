@@ -16,7 +16,13 @@ extension UIView {
             self.addSubview(view)
         }
     }
-    // This constraints with you respective constant invocal
+    
+    func cBuilder(using closure: (LayoutProxy) -> ()) {
+        translatesAutoresizingMaskIntoConstraints = false
+        closure(LayoutProxy(view: self))
+    }
+    
+    /// This constraints with you respective constant, always anchor following with you constant
     func cBuild(top: NSLayoutYAxisAnchor?, costantTop: CGFloat = 0, bottom: NSLayoutYAxisAnchor?, constantBottom: CGFloat = 0, left: NSLayoutXAxisAnchor?, constantLeft: CGFloat = 0,  right: NSLayoutXAxisAnchor?, constantRight: CGFloat = 0) {
         self.translatesAutoresizingMaskIntoConstraints = false
         
