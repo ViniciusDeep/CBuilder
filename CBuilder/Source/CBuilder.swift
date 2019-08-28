@@ -38,6 +38,28 @@ extension UIView {
         }
     }
     
-   
+    /// Method calling when you to consider your view equal to
+    func cBuild(equalTo: ViewType) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        switch equalTo {
+        case .superview:
+            equalToSuperView()
+        }
+    }
     
+    fileprivate func equalToSuperView() {
+        guard let spView = superview else {return}
+        NSLayoutConstraint.activate([
+                topAnchor.constraint(equalTo: spView.topAnchor),
+                leadingAnchor.constraint(equalTo: spView.leadingAnchor),
+                trailingAnchor.constraint(equalTo: spView.trailingAnchor),
+                bottomAnchor.constraint(equalTo: spView.bottomAnchor)
+            ])
+    }
+    
+    
+}
+
+enum ViewType {
+    case superview
 }

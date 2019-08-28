@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         view.addSubview(myView)
         view.backgroundColor = .white
         
-        myView.cBuild(top: view.topAnchor, bottom: view.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor)
+        myView.cBuild(equalTo: .superview)
     }
 }
 
