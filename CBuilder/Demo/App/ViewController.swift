@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         //myView.cBuild(equalTo: .superview)
         myView.cBuild(make: .fillSuperview)
         
-        
     }
 }
 

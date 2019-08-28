@@ -16,6 +16,26 @@ extension UIView {
             self.addSubview(view)
         }
     }
+    // This constraints with you respective constant invocal
+    func cBuild(top: NSLayoutYAxisAnchor?, costantTop: CGFloat = 0, bottom: NSLayoutYAxisAnchor?, constantBottom: CGFloat = 0, left: NSLayoutXAxisAnchor?, constantLeft: CGFloat = 0,  right: NSLayoutXAxisAnchor?, constantRight: CGFloat = 0) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let tope = top {
+            topAnchor.constraint(equalTo: tope, constant: costantTop).isActive = true
+        }
+        
+        if let bott = bottom {
+             bottomAnchor.constraint(equalTo: bott, constant: constantBottom).isActive = true
+        }
+        
+        if let leading = left {
+            leadingAnchor.constraint(equalTo: leading, constant: constantLeft).isActive = true
+        }
+        
+        if let trailing = right {
+            trailing.constraint(equalTo: trailing, constant: constantRight).isActive = true
+        }
+    }
     
     /// This method is calling to set all constraints in to respective anchors
     func cBuild(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?) {
@@ -104,8 +124,6 @@ extension UIView {
                 bottomAnchor.constraint(equalTo: spView.bottomAnchor)
             ])
     }
-    
-    
 }
 
 enum ViewAction {
