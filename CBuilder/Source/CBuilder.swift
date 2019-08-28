@@ -18,17 +18,26 @@ extension UIView {
     }
     
     /// This method is calling to set all constraints in to respective anchors
-    func cBuild(top: NSLayoutYAxisAnchor, bottom: NSLayoutYAxisAnchor, left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) {
+    func cBuild(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: top),
-            bottomAnchor.constraint(equalTo: bottom),
-            leadingAnchor.constraint(equalTo: left),
-            trailingAnchor.constraint(equalTo: right)
-            ])
+        if let tope = top {
+            topAnchor.constraint(equalTo: tope).isActive = true
+        }
+        
+        if let bott = bottom {
+            bottomAnchor.constraint(equalTo: bott).isActive = true
+        }
+        
+        if let leading = left {
+            leadingAnchor.constraint(equalTo: leading).isActive = true
+        }
+        
+        if let trailing = right {
+            trailing.constraint(equalTo: trailing).isActive = true
+        }
     }
     
-    
+   
     
 }
