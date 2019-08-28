@@ -9,9 +9,7 @@
 import UIKit
 
 extension UIView {
-    
-    
-    
+    //This method add arrange of view in view
     func addSubviews(_ views: [UIView]) {
         views.forEach { (view) in
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -19,8 +17,18 @@ extension UIView {
         }
     }
     
-    func cBuild() {
+    /// This method is calling to set all constraints in to respective anchors
+    func cBuild(top: NSLayoutYAxisAnchor, bottom: NSLayoutYAxisAnchor, left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) {
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: top),
+            bottomAnchor.constraint(equalTo: bottom),
+            leadingAnchor.constraint(equalTo: left),
+            trailingAnchor.constraint(equalTo: right)
+            ])
     }
+    
+    
     
 }

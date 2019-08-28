@@ -16,14 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(myView)
         view.backgroundColor = .white
-        NSLayoutConstraint.activate([
-            myView.topAnchor.constraint(equalTo: view.topAnchor),
-            myView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            myView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            myView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
         
-        
+        myView.cBuild(top: view.topAnchor, bottom: view.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor)
     }
 }
 
