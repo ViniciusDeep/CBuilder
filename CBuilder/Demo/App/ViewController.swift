@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         view.addSubview(myView)
         view.backgroundColor = .white
         
+        //myView.cBuild(equalTo: .superview)
         myView.cBuild(equalTo: .superview)
     }
 }

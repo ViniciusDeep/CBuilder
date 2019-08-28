@@ -20,12 +20,7 @@ class View: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(label)
-        
-        
-        
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 300)
-            ])
+        label.cBuild(equalTo: .centerInSuperView)
     }
     
     required init?(coder aDecoder: NSCoder) {

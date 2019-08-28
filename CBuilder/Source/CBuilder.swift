@@ -44,7 +44,17 @@ extension UIView {
         switch equalTo {
         case .superview:
             equalToSuperView()
+        case .centerInSuperView:
+            equalToSuperView()
         }
+    }
+    
+    fileprivate func centerInSuperView() {
+        guard let spView = superview else {return}
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: spView.centerXAnchor),
+            centerYAnchor.constraint(equalTo: spView.centerYAnchor)
+            ])
     }
     
     fileprivate func equalToSuperView() {
@@ -62,4 +72,5 @@ extension UIView {
 
 enum ViewType {
     case superview
+    case centerInSuperView
 }
