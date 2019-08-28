@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    //This method add arrange of view in view
+    /// This method add arrange of view in view
     func addSubviews(_ views: [UIView]) {
         views.forEach { (view) in
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,22 +38,60 @@ extension UIView {
         }
     }
     
-    /// Method calling when you to consider your view equal to
-    func cBuild(equalTo: ViewType) {
+    /// Define width from anchor with constant
+    func cBuild(width: CGFloat) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        switch equalTo {
-        case .superview:
+        self.widthAnchor.constraint(equalToConstant: width).isActive = true
+    }
+    /// Define with from anchor with NSLayoutDimension
+    func cBuild(width: NSLayoutDimension) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(equalTo: width).isActive = true
+    }
+    
+    /// Define height from anchor with constant
+    func cBuild(height: CGFloat) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+    /// Define height from anchor with NSLayoutDimension
+    func cBuild(height: NSLayoutDimension) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalTo: height).isActive = true
+    }
+    
+    
+    /// Method calling when you to consider your view equal to
+    func cBuild(make: ViewAction) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        switch make {
+        case .fillSuperview:
             equalToSuperView()
         case .centerInSuperView:
             equalToSuperView()
+        case .centerXInSuperView:
+            centerXInSuperView()
+        case .centerYInSuperView:
+            centerYInSuperView()
         }
     }
     
     fileprivate func centerInSuperView() {
+        centerXInSuperView()
+        centerYInSuperView()
+    }
+    
+    fileprivate func centerXInSuperView() {
         guard let spView = superview else {return}
         NSLayoutConstraint.activate([
             centerXAnchor.constraint(equalTo: spView.centerXAnchor),
-            centerYAnchor.constraint(equalTo: spView.centerYAnchor)
+            ])
+    }
+    
+    fileprivate func centerYInSuperView() {
+        guard let spView = superview else {return}
+        NSLayoutConstraint.activate([
+            centerYAnchor.constraint(equalTo: spView.centerYAnchor),
             ])
     }
     
@@ -70,7 +108,9 @@ extension UIView {
     
 }
 
-enum ViewType {
-    case superview
+enum ViewAction {
+    case fillSuperview
     case centerInSuperView
+    case centerXInSuperView
+    case centerYInSuperView
 }

@@ -20,7 +20,7 @@ class View: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(label)
-        label.cBuild(equalTo: .centerInSuperView)
+        label.cBuild(make: .centerInSuperView)
     }
     
     required init?(coder aDecoder: NSCoder) {
