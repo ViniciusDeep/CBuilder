@@ -17,9 +17,9 @@ extension UIView {
         }
     }
     
-    func cBuilder(using closure: (LayoutProxy) -> ()) {
+    func cBuilder(_ make : (LayoutProxy) -> ()) {
         translatesAutoresizingMaskIntoConstraints = false
-        closure(LayoutProxy(view: self))
+        make(LayoutProxy(view: self))
     }
     
     /// This constraints with you respective constant, always anchor following with you constant
