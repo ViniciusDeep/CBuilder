@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         //myView.cBuild(equalTo: .superview)
         myView.cBuild(make: .fillSuperview)
+        
+        myView.cBuilder { (make) in
+            
+        }
     }
 }
 
