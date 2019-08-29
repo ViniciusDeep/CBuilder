@@ -1,0 +1,5 @@
+os: osx
+language: objective-c
+osx_image: xcode10.2
+script:
+  - set -o pipefail && xcodebuild build -project CBuilder.xcodeproj -scheme CBuilder -sdk iphonesimulator12.2 -destination 'name=iPhone 6,OS=12.2' ONLY_ACTIVE_ARCH=NO | xcpretty
