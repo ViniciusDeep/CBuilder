@@ -5,7 +5,7 @@
 </p>
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
-[![Build Status](https://travis-ci.org/devxoul/Then.svg?branch=master)](https://travis-ci.org/devxoul/Then)
+[![Build Status](https://travis-ci.org/ViniciusDeep/CBuilder.svg?branch=master)](https://travis-ci.org/ViniciusDeep/CBuilder)
 
 
 
