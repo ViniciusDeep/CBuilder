@@ -11,6 +11,27 @@ import XCTest
 
 class CBuilderTests: XCTestCase {
 
+    var mainView: UIView?
+    
+    
+    func testSubViews() {
+        mainView = UIView()
+        
+        let stubView = UIView(frame: .zero)
+        let scrubView = UIView(frame: .zero)
+        
+        
+        mainView?.addSubviews([stubView, scrubView])
+        
+        let subViews = [stubView, scrubView]
+        
+        
+        let subviews = mainView?.subviews.map({$0})
+        
+        XCTAssertEqual(subViews, subviews)
+    }
+    
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
