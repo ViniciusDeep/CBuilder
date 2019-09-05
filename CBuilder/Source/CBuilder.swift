@@ -43,6 +43,18 @@ extension UIView {
         }
     }
     
+    
+    func cBuild(to anchor: TypeAnchor, with priotity: CGFloat) {
+        switch anchor {
+        case .top:
+            break
+        default:
+            print("EEEII")
+        }
+        
+
+        }
+    
     /// This method is calling to set all constraints in to respective anchors
     func cBuild(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -110,9 +122,7 @@ extension UIView {
                 constraint.isActive = false
             }
         }
-        
     }
-    
     
     fileprivate func centerInSuperView() {
         centerXInSuperView()
@@ -154,4 +164,11 @@ enum ViewAction {
 
 enum ConstraintAction {
     case desactiveAllConstraints
+}
+
+enum TypeAnchor {
+    case top
+    case leading
+    case trailing
+    case bottom
 }
