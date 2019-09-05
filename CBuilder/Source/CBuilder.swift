@@ -17,7 +17,7 @@ extension UIView {
         }
     }
     
-    func cBuilder(_ make : (LayoutProxy) -> ()) {
+    func cBuild(_ make : (LayoutProxy) -> ()) {
         translatesAutoresizingMaskIntoConstraints = false
         make(LayoutProxy(view: self))
     }
@@ -86,7 +86,6 @@ extension UIView {
         self.heightAnchor.constraint(equalTo: height).isActive = true
     }
     
-    
     /// Method calling when you to consider your view equal to
     func cBuild(make: ViewAction) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -101,6 +100,19 @@ extension UIView {
             centerYInSuperView()
         }
     }
+    
+    
+    func cBuild(make: ConstraintAction) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        switch make {
+        case .desactiveAllConstraints:
+            constraints.forEach { (constraint) in
+                constraint.isActive = false
+            }
+        }
+        
+    }
+    
     
     fileprivate func centerInSuperView() {
         centerXInSuperView()
@@ -137,4 +149,9 @@ enum ViewAction {
     case centerInSuperView
     case centerXInSuperView
     case centerYInSuperView
+}
+
+
+enum ConstraintAction {
+    case desactiveAllConstraints
 }
