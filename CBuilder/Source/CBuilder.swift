@@ -17,7 +17,7 @@ extension UIView {
         }
     }
     
-    func cBuilder(_ make : (LayoutProxy) -> ()) {
+    func cBuild(_ make : (LayoutProxy) -> ()) {
         translatesAutoresizingMaskIntoConstraints = false
         make(LayoutProxy(view: self))
     }
@@ -42,6 +42,18 @@ extension UIView {
             trailing.constraint(equalTo: trailing, constant: constantRight).isActive = true
         }
     }
+    
+    
+    func cBuild(to anchor: TypeAnchor, with priotity: CGFloat) {
+        switch anchor {
+        case .top:
+            break
+        default:
+            print("EEEII")
+        }
+        
+
+        }
     
     /// This method is calling to set all constraints in to respective anchors
     func cBuild(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?) {
@@ -86,7 +98,6 @@ extension UIView {
         self.heightAnchor.constraint(equalTo: height).isActive = true
     }
     
-    
     /// Method calling when you to consider your view equal to
     func cBuild(make: ViewAction) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -99,6 +110,17 @@ extension UIView {
             centerXInSuperView()
         case .centerYInSuperView:
             centerYInSuperView()
+        }
+    }
+    
+    
+    func cBuild(make: ConstraintAction) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        switch make {
+        case .desactiveAllConstraints:
+            constraints.forEach { (constraint) in
+                constraint.isActive = false
+            }
         }
     }
     
@@ -137,4 +159,16 @@ enum ViewAction {
     case centerInSuperView
     case centerXInSuperView
     case centerYInSuperView
+}
+
+
+enum ConstraintAction {
+    case desactiveAllConstraints
+}
+
+enum TypeAnchor {
+    case top
+    case leading
+    case trailing
+    case bottom
 }
