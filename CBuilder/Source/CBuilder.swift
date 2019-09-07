@@ -146,11 +146,11 @@ extension UIView {
     fileprivate func equalToSuperView() {
         guard let spView = superview else {return}
         NSLayoutConstraint.activate([
-                topAnchor.constraint(equalTo: spView.topAnchor),
-                leadingAnchor.constraint(equalTo: spView.leadingAnchor),
-                trailingAnchor.constraint(equalTo: spView.trailingAnchor),
-                bottomAnchor.constraint(equalTo: spView.bottomAnchor)
-            ])
+            topAnchor.constraint(equalTo: spView.topAnchor),
+            leadingAnchor.constraint(equalTo: spView.leadingAnchor),
+            trailingAnchor.constraint(equalTo: spView.trailingAnchor),
+            bottomAnchor.constraint(equalTo: spView.bottomAnchor)
+        ])
     }
 }
 

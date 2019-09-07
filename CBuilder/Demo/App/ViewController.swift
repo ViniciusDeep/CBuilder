@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         myView.cBuild(make: .fillSuperview)
         print(myView.constraints)
         
-        myView.cBuild(make: .desactiveAllConstraints)
+//        myView.cBuild(make: .desactiveAllConstraints)
         print(myView.constraints)
     }
 }
