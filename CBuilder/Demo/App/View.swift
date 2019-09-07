@@ -11,16 +11,22 @@ import UIKit
 class View: UIView {
     
     let label: UILabel = {
-       let lb = UILabel()
-       lb.translatesAutoresizingMaskIntoConstraints = false
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "CBuilder is good"
+        lb.backgroundColor = .red
         return lb
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(label)
-        label.cBuild(make: .fillSuperview)
+        label.cBuild { (layout) in
+            layout.centerX == self.centerXAnchor
+            layout.centerY == self.centerYAnchor
+            layout.height == 200
+            layout.width == self.widthAnchor / 2
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
