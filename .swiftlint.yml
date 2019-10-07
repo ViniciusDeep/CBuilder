@@ -1,0 +1,20 @@
+line_length:
+ - 500 # warning
+ - 800 # error
+
+function_body_length:
+ - 200 # error
+ - 150 # warning
+
+disabled_rules:
+ - leading_whitespace
+ - trailing_whitespace
+ - vertical_whitespace
+ - private_over_fileprivate
+ - comma
+ - colon
+ - trailing_semicolon
+ - class_delegate_protocol
+excluded:
+ - Pods
+ - Sigma/Plugins
