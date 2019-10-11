@@ -73,6 +73,23 @@ myView.cBuild(make: .fillSuperview)
 2. Open your Xcode, select a simulator, click the play button or `cmd + R`
 3. Test in your cases, and don't worry to use `TranslateAutoRezingsMas.............................`
  
+ ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
+
+ ```ruby
+ # Podfile
+ use_frameworks!
+
+ target 'YOUR_TARGET_NAME' do
+     pod 'CBuilder'
+ end
+ ```
+
+ Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
+
+ ```bash
+ $ pod install
+ ```
+
 
 ## License
 
