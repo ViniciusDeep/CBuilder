@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AD04A342350887300CF91D8 /* CBuilder.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CBuilder.podspec; sourceTree = "<group>"; };
 		"CBuilder::CBuilder::Product" /* CBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CBuilder::CBuilderTests::Product" /* CBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
@@ -110,7 +111,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -121,8 +122,8 @@
 				OBJ_21 /* CBuilderTests */,
 				OBJ_22 /* LICENSE */,
 				OBJ_23 /* README.md */,
+				0AD04A342350887300CF91D8 /* CBuilder.podspec */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -204,7 +205,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_17 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
