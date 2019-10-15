@@ -117,7 +117,7 @@ extension UIView {
     func cBuild(make: ConstraintAction) {
         self.translatesAutoresizingMaskIntoConstraints = false
         switch make {
-        case .desactiveAllConstraints:
+        case .deactivateAllConstraints:
             constraints.forEach { (constraint) in
                 constraint.isActive = false
             }
@@ -163,7 +163,7 @@ enum ViewAction {
 
 
 enum ConstraintAction {
-    case desactiveAllConstraints
+    case deactivateAllConstraints
 }
 
 enum TypeAnchor {
