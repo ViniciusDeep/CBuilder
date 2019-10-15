@@ -104,6 +104,8 @@ extension UIView {
         switch make {
         case .fillSuperview:
             equalToSuperView()
+        case let .fillSuperviewWithPaddings(top, leading, trailing, bottom):
+            equalToSuperView(top: top, leading: leading, trailing: trailing, bottom: bottom)
         case .centerInSuperView:
             equalToSuperView()
         case .centerXInSuperView:
@@ -142,20 +144,21 @@ extension UIView {
             centerYAnchor.constraint(equalTo: spView.centerYAnchor),
             ])
     }
-    
-    fileprivate func equalToSuperView() {
+        
+    fileprivate func equalToSuperView(top: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0) {
         guard let spView = superview else {return}
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: spView.topAnchor),
-            leadingAnchor.constraint(equalTo: spView.leadingAnchor),
-            trailingAnchor.constraint(equalTo: spView.trailingAnchor),
-            bottomAnchor.constraint(equalTo: spView.bottomAnchor)
+            topAnchor.constraint(equalTo: spView.topAnchor, constant: top),
+            leadingAnchor.constraint(equalTo: spView.leadingAnchor, constant: leading),
+            trailingAnchor.constraint(equalTo: spView.trailingAnchor, constant: -trailing),
+            bottomAnchor.constraint(equalTo: spView.bottomAnchor, constant: -bottom)
         ])
     }
 }
 
 enum ViewAction {
     case fillSuperview
+    case fillSuperviewWithPaddings(top: CGFloat, leading: CGFloat, trailing: CGFloat, bottom: CGFloat)
     case centerInSuperView
     case centerXInSuperView
     case centerYInSuperView
