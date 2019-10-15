@@ -158,7 +158,7 @@ extension UIView {
 
 enum ViewAction {
     case fillSuperview
-    case fillSuperviewWithPaddings(top: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0)
+    case fillSuperviewWithPaddings(top: CGFloat, leading: CGFloat, trailing: CGFloat, bottom: CGFloat)
     case centerInSuperView
     case centerXInSuperView
     case centerYInSuperView
