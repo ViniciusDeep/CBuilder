@@ -28,10 +28,10 @@ view.addSubview(myView)
  myView.translatesAutoresizingMaskIntoConstraints = false
        
  NSLayoutConstraint.activate([
-            myView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            myView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            myView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            myView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            myView.topAnchor.constraint(equalTo: view.topAnchor),
+            myView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            myView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            myView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
        ])
 }
 ```
