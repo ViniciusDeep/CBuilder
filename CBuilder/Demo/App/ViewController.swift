@@ -16,12 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(myView)
         view.backgroundColor = .white
-        //myView.cBuild(equalTo: .superview)
         myView.cBuild(make: .fillSuperview)
+        print(myView.constraints)
         
-        myView.cBuilder { (make) in
-            
-        }
+//        myView.cBuild(make: .desactiveAllConstraints)
+        print(myView.constraints)
     }
 }
 
